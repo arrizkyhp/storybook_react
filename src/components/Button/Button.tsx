@@ -5,19 +5,21 @@ type ButtonProps = {
   backgroundColor?: "red" | "green" | "blue";
   size?: "sm" | "md" | "lg";
   onClick?: () => void;
+  handleClick?: () => void;
 };
 
 const Button = ({
-  label,
+  label = "Click",
   backgroundColor = "red",
   size = "md",
   onClick,
+  handleClick,
   ...props
 }: ButtonProps) => {
   let scale = 1;
 
   if (size === "sm") scale = 0.75;
-  if (size === "lg") scale = 0.75;
+  if (size === "lg") scale = 1.5;
 
   const style = {
     backgroundColor,
@@ -26,7 +28,7 @@ const Button = ({
   };
 
   return (
-    <button style={style} onClick={onClick} {...props}>
+    <button style={style} onClick={handleClick} {...props}>
       {label}
     </button>
   );
