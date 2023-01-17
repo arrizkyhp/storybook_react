@@ -9,6 +9,11 @@ export default {
   args: {
     label: "Next",
   },
+  argTypes: {
+    options: ["red"],
+    backgroundColor: { control: "color", options: ["red", "blue"] },
+    size: { control: "select" },
+  },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Button>;
 
