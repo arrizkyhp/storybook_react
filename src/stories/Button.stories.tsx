@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import { Button } from "./Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -15,10 +14,11 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({}); //<=== Render Function
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   primary: true,
+  size: "large",
 };
 
 export const Secondary = Template.bind({});
@@ -38,4 +38,14 @@ Small.argTypes = {
     control: "select",
     options: ["red", "yellow", "green"],
   },
+};
+
+export const Blue = Template.bind({});
+Blue.args = {
+  backgroundColor: "blue",
+  size: "small",
+  primary: true,
+};
+Blue.argTypes = {
+  backgroundColor: { control: "select", options: ["red", "green"] },
 };
