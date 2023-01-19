@@ -1,0 +1,51 @@
+.button {
+  @apply rounded-[5px] relative
+  text-slate-700 text-sm py-3 px-6 font-semibold
+  flex gap-2
+  border-none
+  cursor-pointer;
+
+  /* Type */
+  &.primary {
+    @apply text-white bg-blue-500 hover:bg-blue-700;
+  }
+
+  &.secondary {
+    @apply text-white bg-orange-500 hover:bg-orange-700;
+  }
+
+  &.success {
+    @apply text-white bg-green-500 hover:bg-green-700;
+  }
+
+  &.danger {
+    @apply text-white bg-red-500 hover:bg-red-700;
+  }
+
+  /* Status */
+  &.disabled {
+    @apply text-white bg-gray-400 cursor-not-allowed hover:bg-gray-400;
+  }
+
+  /* Size */
+  &.small {
+    @apply text-xs py-2 px-4;
+  }
+
+  &.medium {
+    @apply text-sm py-3 px-6;
+  }
+
+  &.large {
+    @apply text-base py-4 px-8;
+  }
+
+  &.fullWidth {
+    @apply flex justify-center items-center w-full text-center;
+  }
+
+  /* miscellaneous */
+  &.withIcon {
+    @apply flex gap-5;
+  }
+}

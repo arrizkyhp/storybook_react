@@ -9,11 +9,11 @@ interface ButtonProps {
   /**
    * What background color to use
    */
-  backgroundColor?: "red" | "green" | "blue";
+  backgroundColor?: string;
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large" | "extra";
+  size?: "small" | "medium" | "large";
   /**
    * Button contents
    */
