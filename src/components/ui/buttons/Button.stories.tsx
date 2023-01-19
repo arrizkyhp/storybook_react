@@ -40,6 +40,12 @@ Disabled.args = {
   isDisabled: true,
 };
 
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  withIcon: true,
+  buttonIcon: "✅",
+};
+
 export const Small = Template.bind({});
 Small.args = {
   size: "sm",
