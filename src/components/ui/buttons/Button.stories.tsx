@@ -1,10 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import PlusIcon from "~/svg/PlusIcon";
 import Button from "./Button";
-import ButtonDocs from "./ButtonDocs.stories.mdx";
 
 export default {
-  title: "Components/ui/Button",
+  title: "Example/ui/Button",
   component: Button,
   args: {
     children: "Click",

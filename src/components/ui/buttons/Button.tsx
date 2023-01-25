@@ -6,7 +6,7 @@ const Button = (props: ButtonProps) => {
   const {
     buttonIcon = PlusIcon,
     children,
-    isFullWidth,
+    isFullWidth = false,
     isDanger,
     isDisabled,
     isPrimary,

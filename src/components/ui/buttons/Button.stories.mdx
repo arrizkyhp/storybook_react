@@ -1,0 +1,102 @@
+import { Meta, Story, Canvas, ArgsTable, Source } from "@storybook/addon-docs";
+import Button from "./Button";
+
+<Meta title="Components/Button" component={Button} />
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+Import the component first
+
+<Source
+  language="jsx"
+  format={true}
+  code={`import { Button } from "~/ui/buttons";`}
+/>
+
+Then start using the component:
+
+<Canvas withSource="open">
+  <Story name="Default" args={{ children: "Click" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component API
+
+### Main Properties
+
+<ArgsTable story="Default" />
+
+## Applications & Examples
+
+### `Type` Variants
+
+<Canvas>
+  <Story name="Primary" args={{ children: "Primary", isPrimary: "true" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Secondary" args={{ children: "Secondary", isSecondary: "true" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Success" args={{ children: "Success", isSuccess: "true" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Danger" args={{ children: "Danger", isDanger: "true" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Disable" args={{ children: "Disable", isDisabled: "true" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### `Size` Variants
+
+<Canvas>
+  <Story
+    name="Large"
+    args={{ children: "Large", isPrimary: "true", size: "lg" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    args={{ children: "Medium", isPrimary: "true", size: "md" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Small"
+    args={{ children: "Small", isPrimary: "true", size: "sm" }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### `Block` Variants
+
+<Canvas>
+  <Story
+    name="Block"
+    args={{ children: "Block", isPrimary: "true", isFullWidth: true }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### `Icon` Variants
+
+<Canvas>
+  <Story
+    name="Icon"
+    args={{
+      children: "Icon",
+      isPrimary: "true",
+      withIcon: true,
+      buttonIcon: "❤️‍🔥",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
