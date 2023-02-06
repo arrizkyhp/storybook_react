@@ -1,34 +1,38 @@
+import { ButtonVariant } from "~/enum/.";
 import styles from "~/styles/ui/Button.module.scss";
 import PlusIcon from "~/svg/PlusIcon";
+import Spinner from "~/svg/Spinner";
 import { ButtonProps } from "~/types/ButtonProps";
 
 const Button = (props: ButtonProps) => {
   const {
     buttonIcon = PlusIcon,
     children,
+    className,
     isFullWidth = false,
-    isDanger,
     isDisabled,
-    isPrimary,
-    isSecondary,
-    isSuccess,
+    isLoading = false,
     size = "md",
+    variant,
     withIcon,
     ...otherProps
   } = props;
 
   const styleButton = [styles.button];
 
-  if (isPrimary) styleButton.push(styles.primary);
-  if (isSecondary) styleButton.push(styles.secondary);
-  if (isSuccess) styleButton.push(styles.success);
-  if (isDanger) styleButton.push(styles.danger);
   if (isDisabled) styleButton.push(styles.disabled);
   if (isFullWidth) styleButton.push(styles.fullWidth);
+
+  if (variant === ButtonVariant.PRIMARY) styleButton.push(styles.primary);
+  if (variant === ButtonVariant.SECONDARY) styleButton.push(styles.secondary);
+  if (variant === ButtonVariant.SUCCESS) styleButton.push(styles.success);
+  if (variant === ButtonVariant.DANGER) styleButton.push(styles.danger);
 
   if (size === "sm") styleButton.push(styles.small);
   if (size === "md") styleButton.push(styles.medium);
   if (size === "lg") styleButton.push(styles.large);
+
+  if (className) styleButton.push(className);
 
   return (
     <button
@@ -43,6 +47,8 @@ const Button = (props: ButtonProps) => {
             {buttonIcon} {children}
           </>
         </span>
+      ) : isLoading ? (
+        <Spinner />
       ) : (
         children
       )}

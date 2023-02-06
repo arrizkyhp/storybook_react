@@ -12,6 +12,10 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "src/styles"),
       },
       {
+        find: "~/enum",
+        replacement: path.resolve(__dirname, "src/enum"),
+      },
+      {
         find: "~/types",
         replacement: path.resolve(__dirname, "src/models/types"),
       },

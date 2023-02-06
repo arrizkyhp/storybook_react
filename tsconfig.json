@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "~/styles/*": ["./src/styles/*"],
+      "~/enum/*": ["./src/enum/*"],
       "~/types/*": ["./src/models/types/*"],
       "~/ui/*": ["./src/components/ui/*"],
       "~/svg/*": ["./src/components/svg/*"]

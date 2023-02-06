@@ -16,22 +16,22 @@ export const Default = Template.bind({});
 
 export const Primary = Template.bind({});
 Primary.args = {
-  isPrimary: true,
+  variant: "primary",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  isSecondary: true,
+  variant: "secondary",
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  isSuccess: true,
+  variant: "success",
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
-  isDanger: true,
+  variant: "danger",
 };
 
 export const Disabled = Template.bind({});

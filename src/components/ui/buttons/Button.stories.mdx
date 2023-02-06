@@ -1,11 +1,26 @@
 import { Meta, Story, Canvas, ArgsTable, Source } from "@storybook/addon-docs";
 import Button from "./Button";
+import "../../../App.css";
 
 <Meta title="Components/Button" component={Button} />
 
 export const Template = (args) => <Button {...args} />;
 
 # Button
+
+## Table of Contents
+
+- [Getting Started](?path=/docs/components-button--default-story#getting-started)
+- [Component API](?path=/docs/components-button--default-story#component-api)
+- [Applications & Examples](?path=/docs/components-button--primary#applications-examples)
+  - [`Type` variants](?path=/docs/components-button--secondary#type-variant)
+  - [`Size` variants](?path=/docs/components-button--success#size-variant)
+  - [`Disable` variants](?path=/docs/components-button--disable#disable-variant)
+  - [`Loading` property](?path=/docs/components-button--loading#loading-variant)
+  - [`Block` variants](?path=/docs/components-button--block#block-variant)
+  - [`Icon` property](?path=/docs/components-button--icon#icon-variant)
+
+## <a id="getting-started"></a>Getting Started
 
 Import the component first
 
@@ -18,81 +33,97 @@ Import the component first
 Then start using the component:
 
 <Canvas withSource="open">
-  <Story name="Default" args={{ children: "Click" }}>
+  <Story name="Default" args={{ children: "Click", className: "bg-red-100" }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
-## Component API
+## <a id="component-api"></a>Component API
 
 ### Main Properties
 
 <ArgsTable story="Default" />
 
-## Applications & Examples
+## <a id="applications-examples"></a>Applications & Examples
 
-### `Type` Variants
+### <a id="type-variant"></a>`Type` variants
 
 <Canvas>
-  <Story name="Primary" args={{ children: "Primary", isPrimary: "true" }}>
+  <Story name="Primary" args={{ children: "Primary", variant: "primary" }}>
     {Template.bind({})}
   </Story>
-  <Story name="Secondary" args={{ children: "Secondary", isSecondary: "true" }}>
+  <Story
+    name="Secondary"
+    args={{ children: "Secondary", variant: "secondary" }}
+  >
     {Template.bind({})}
   </Story>
-  <Story name="Success" args={{ children: "Success", isSuccess: "true" }}>
+  <Story name="Success" args={{ children: "Success", variant: "success" }}>
     {Template.bind({})}
   </Story>
-  <Story name="Danger" args={{ children: "Danger", isDanger: "true" }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Disable" args={{ children: "Disable", isDisabled: "true" }}>
+  <Story name="Danger" args={{ children: "Danger", variant: "danger" }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
-### `Size` Variants
+### <a id="size-variant"></a>`Size` variants
 
 <Canvas>
   <Story
     name="Large"
-    args={{ children: "Large", isPrimary: "true", size: "lg" }}
+    args={{ children: "Large", variant: "primary", size: "lg" }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Medium"
-    args={{ children: "Medium", isPrimary: "true", size: "md" }}
+    args={{ children: "Medium", variant: "primary", size: "md" }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Small"
-    args={{ children: "Small", isPrimary: "true", size: "sm" }}
+    args={{ children: "Small", variant: "primary", size: "sm" }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-### `Block` Variants
+### <a id="disable-variant"></a>`Disable` variants
+
+<Canvas>
+  <Story name="Disable" args={{ children: "Disabled", isDisabled: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### <a id="loading-variant"></a>`Loading` property
+
+<Canvas>
+  <Story name="Loading" args={{ variant: "primary", isLoading: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### <a id="block-variant"></a>`Block` variants
 
 <Canvas>
   <Story
     name="Block"
-    args={{ children: "Block", isPrimary: "true", isFullWidth: true }}
+    args={{ children: "Block", variant: "primary", isFullWidth: true }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-### `Icon` Variants
+### <a id="icon-variants"></a>`Icon` property
 
 <Canvas>
   <Story
     name="Icon"
     args={{
       children: "Icon",
-      isPrimary: "true",
+      variant: "primary",
       withIcon: true,
       buttonIcon: "❤️‍🔥",
     }}
